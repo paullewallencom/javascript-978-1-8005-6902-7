@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> JSON Course</title>
+</head>
+
+<body>
+  <div class="message"></div>
+  <script>
+    const message = document.querySelector('.message');
+    message.textContent = "Hello";
+    fetch("test1.json").then(response => response.json()).then(json => output3(json));
+
+    function output3(data) {
+      console.log(data);
+      const skillList = {};
+      data.friends.forEach(val => {
+        //console.log(val.skills);
+        val.skills.forEach(skill => {
+          if (skillList[skill]) {
+            skillList[skill]++;
+          }
+          else {
+            skillList[skill] = 1;
+          }
+          //console.log(skill);
+        })
+      })
+      console.log(skillList);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <title>Users JSON</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    const output = document.querySelector('div');
+    const url = "https://randomuser.me/api/?results=50";
+    fetch(url).then(rep => rep.json()).then(data => users(data));
+
+    function users(data) {
+      console.log(data)
+      data.results.forEach(val => {
+        console.log(val.picture.thumbnail);
+        output.innerHTML += `<img src=${val.picture.thumbnail}>`;
+      })
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> JSON Course</title>
+</head>
+
+<body>
+  <div class="message"></div>
+  <script>
+    const message = document.querySelector('.message');
+    message.textContent = "Hello";
+    fetch("test1.json").then(response => response.json()).then(json => output3(json));
+
+    function output3(data) {
+      console.log(data);
+    }
+
+    function output2(data) {
+      console.log(data);
+      for (let val = 0; val < data.friends.length; val++) {
+        console.log(val);
+        message.textContent += `${data.friends[val].first} - `;
+      }
+    }
+
+    function output1(data) {
+      console.log(data);
+      for (val in data.friends) {
+        console.log(val);
+        message.textContent += `${data.friends[val].first}`;
+      }
+    }
+
+    function output(data) {
+      console.log(data);
+      data.friends.forEach(val => {
+        console.log(val.first);
+        console.log(val.last);
+        message.textContent += `${val.first} ${val.last} - `;
+      })
+    }
+  </script>
+</body>
+
+</html>
+
+{
+  "friends": [{
+    "first": "Laurence"
+    , "last": "Svekis"
+    , "counter": 1440
+    , "skills" : ["JavaScript","HTML","CSS"]
+  },{
+    "first": "Linda"
+    , "last": "Doe"
+    , "counter": 50
+        , "skills" : ["JSON","AJAX","CSS"]
+  },{
+    "first": "John"
+    , "last": "Smith"
+    , "counter": 30
+        , "skills" : ["JavaScript","HTML","CSS","JSON"]
+  }
+  ]
+}

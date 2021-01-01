@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> JSON Course</title>
+</head>
+
+<body>
+  <div class="message"></div>
+  <script>
+    const message = document.querySelector('.message');
+    message.textContent = "Hello";
+    const myObj = {
+      "name": "value"
+      , "last": "Svekis"
+    };
+    console.log(myObj);
+    message.textContent = myObj.name;
+    message.textContent = myObj["last"];
+    myObj["first Name"] = "Laurence";
+    console.log(myObj);
+    myObj.firstName = "John";
+  </script>
+</body>
+
+</html>

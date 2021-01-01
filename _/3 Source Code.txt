@@ -1,0 +1,14 @@
+    const myObj = {
+      "myStr" : "String",
+      "myNum" : 1000,
+      "myObj" : {
+        "first" : "Laurence"
+      },
+      "myArr" : ["Hello","world",1],
+      "myBoo" : true,
+      "myNull" : null
+    };
+    
+    myObj.myStr = "New String";
+    myObj["myStr"] = "Bracket Notation";
+    console.log(myObj);

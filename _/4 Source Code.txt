@@ -1,0 +1,14 @@
+    const myObj = {
+      "first": "Laurence"
+      , "last": "Svekis"
+      , "age": 40
+    };
+    const val = JSON.stringify(myObj);
+    message.textContent = val;
+    const myStr = '{"first":"Laurence","last":"Svekis","age":40}';
+    const val1 = JSON.parse(myStr);
+    console.log(val1);
+    val1.age = 41;
+    console.log(val1);
+    const val2 = JSON.stringify(val1);
+    console.log(val2);
